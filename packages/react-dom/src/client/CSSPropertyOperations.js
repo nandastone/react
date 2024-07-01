@@ -30,7 +30,7 @@ export function createDangerousStringForStyles(styles) {
         continue;
       }
       const styleValue = styles[styleName];
-      if (styleValue != null) {
+      if (styleValue != null && typeof styleValue !== 'boolean' && styleValue !== '') {
         const isCustomProperty = styleName.indexOf('--') === 0;
         serialized +=
           delimiter +
